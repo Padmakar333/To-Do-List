@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <div    class="card">
+   
+        <div class="to-do-app" id="to-do-app">
+            <h1 id="heading"> My to-do list <img src="./image/to-do-image.png" ></h1>
+        <div class="row"> <input type="text" id="one" name="input" placeholder="Enter your task here.....">
+            <button id="but">Add</button>
+            </div>
+            
+           
+           
+            <div class="asasa">
+                <ul id="list1" style="list-style-type: none;">
+                    <audio src="./Audio/quotcancelledquot-175693.mp3" >audio</audio>
+            </ul>
+            </div>
+        
+       
+    </div>
+    </div>
+    
+        
+    
+
+
+
+
+
+    <script>
+        let au=new Audio('./Audio/success-1-6297.mp3')
+        let de=new Audio('./Audio/quotcancelledquot-175693.mp3')
+        
+let inputtag=document.getElementById('one');     // for 'input-tag'
+let addbut=document.getElementById('but');       // for 'add' button
+let ull=document.getElementById('list1');         // for ul(in html code) to show input text
+let string=""
+let ttime=document.createElement('input')
+
+inputtag.addEventListener('keydown',(e1)=>{
+ string=e1.target.value
+ 
+
+
+})
+
+
+addbut.addEventListener('click',(e)=>{
+    au.play();
+    let ele=document.createElement('li')      //create li element with id="listelement" for ul
+    ele.id="listelement"
+
+let nodee=document.createTextNode(string)     //create text node for li
+console.log(nodee)
+let closebut=document.createElement('img')   // create img ('x') for li
+closebut.src='./image/closeimg.jpg';
+
+let editbut=document.createElement('button')  // create edite button for li
+editbut.innerHTML="edit"                      // for edit button
+
+let ttime=document.createElement('input')
+ttime.type="time"
+let timeat=prompt(" set time for task in  'HH:MM'")
+ttime.value=timeat
+
+ele.appendChild(nodee)                          // add text in li
+ele.appendChild(closebut)                       // add closebut in li
+ele.appendChild(editbut);  
+ele.appendChild(ttime)   
+console.log(ttime.getHours)                  // add edit button in li
+
+
+   ull.appendChild(ele)                         //add 'li' in 'ul'
+
+   closebut.addEventListener('click',()=>{      //close functionality for 'closebut'
+    ull.removeChild(ele)
+    de.play();
+})
+
+   editbut.addEventListener('click',(e)=>{      // edit functionality for edit-button
+     let ss=prompt("enter your correction")
+
+        ele.innerHTML=ss
+     ele.appendChild(closebut)
+      ele.appendChild(editbut);
+
+           })
+
+    inputtag.value=" "
+
+    let currentdate=new Date()
+let ssw=currentdate.getHours()
+let ww=currentdate.getMinutes()
+console.log(ssw)
+console.log(ww)
+
+
+})
+
+
+
+
+// let loginp=document.getElementById('logininput')
+// let pass=document.getElementById('loginpassword')
+// let logg=document.getElementById('ee')
+// let logcc=document.getElementById('loginbtn')
+// let app=document.getElementById('to-do-app')
+
+
+
+
+
+// logcc.addEventListener('click',()=>{
+//     console.log(loginp.value)
+//     console.log(pass.value)
+//     if(loginp.value=="vaibhav" && pass.value=="vaibhav"){
+//         app.style.visibility="visible"
+//         logg.style.visibility="hidden"
+//         alert("sucess")
+
+//     }else{
+//         alert("enter correct credentials")
+//     }
+
+  
+// })
+
+
+
+    </script>
+</body>
+</html>

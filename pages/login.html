@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login" id="ee">
+
+        <label for="userid" >userID:</label>
+        <input name="userid" type="text" placeholder="yourName" id="logininput">
+        <br>
+        <br>
+        <label for="password" >password:</label>
+        <input type="password" name="password" id="loginpassword" placeholder="password">
+            <br>
+            <button id="loginbtn">button</button>
+    <input type="text" id="inn">
+            <div class="wait">
+    
+            </div>
+    
+        </div>
+    <script>
+        let inputt=document.getElementById('inn')
+        let doccq=document.getElementById('wait')
+        let logg=document.getElementById('loginbtn')
+        let string="";
+        logg.addEventListener('click',()=>{
+            string=inputt.value
+            let para=document.createElement('p')
+
+       let snode=document.createTextNode(string)
+       console.log(snode)
+       para.append(snode)
+       console.log(para.value)
+
+        doccq.appendChild(para)
+
+        })
+       
+
+    </script>
+</body>
+</html>
+
+
